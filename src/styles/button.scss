@@ -1,0 +1,25 @@
+button {
+  display: inline-block;
+  
+  font-family: $font-heading;
+
+  color: $color-1;
+  font-weight: 600;
+  text-align: center;
+
+  background-color: $color-4;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 1em;
+
+  border-radius: 0.5em;
+
+  transition: 
+    color $transition,
+    background-color $transition;
+
+  &:hover {
+    color: $color-4;
+    background-color: $color-1;
+  }
+}

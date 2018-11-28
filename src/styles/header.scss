@@ -1,0 +1,22 @@
+.header {
+  margin-bottom: $gutter * 2;
+
+  &__content {
+    display:flex;
+    max-width: $max-width;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    font-family: $font-heading;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  
+  &__title {
+    font-family: $font-heading;
+    text-align: center;
+    font-size: 3.75rem;
+  }
+}

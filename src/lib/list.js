@@ -1,4 +1,4 @@
-import { empty } from './helpers';
+import { empty } from './helpers.js'; /* eslint-disable-line*/
 
 export default class List {
   constructor() {

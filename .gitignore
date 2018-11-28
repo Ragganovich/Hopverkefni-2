@@ -8,6 +8,10 @@
 
 # production
 /build
+/dist
+
+# examples unrelated to actual site
+/utlit
 
 # misc
 .DS_Store
@@ -22,4 +26,4 @@ yarn-error.log*
 
 .env
 
-dist/
+

@@ -1,0 +1,31 @@
+.thumbnail {
+  background-color: $color-4;
+  background-clip: content-box;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 386.67px;
+  width: 386.67px;
+  margin-bottom: $gutter*2;
+
+  &__subtitle {
+    font-family: $font-heading;
+    font-size: 0.75rem;
+    background-color: $color-4;
+    text-transform: uppercase;
+  }
+  
+  &__title {
+    font-family: $font-heading;
+    font-size: 1.25rem;
+    background-color: $color-4;
+    font-weight: 600;
+    word-wrap: wrap;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+}
