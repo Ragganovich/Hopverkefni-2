@@ -4,13 +4,15 @@ button {
   font-family: $font-heading;
 
   color: $color-1;
-  font-weight: 600;
+  font-size: 1.5em;
+  font-weight:700;
   text-align: center;
 
   background-color: $color-4;
   border: none;
-  padding: 0.5rem 1rem;
-  margin: 1em;
+  padding: $gutter/2 $gutter;
+  margin: $gutter;
+  margin-bottom: $gutter*2;
 
   border-radius: 0.5em;
 

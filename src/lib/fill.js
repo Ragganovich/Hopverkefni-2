@@ -6,6 +6,7 @@ export function fill(type, lectureData) {
       // búa til nýtt li element fyrir listann
       const node = document.createElement('DIV');
       node.className = 'thumbnail';
+      node.id = lectures[i].slug;
 
       // setja thumbnail fyrirlestursins sem bakgrunnsmynd
       const thumbImg = lectures[i].thumbnail;

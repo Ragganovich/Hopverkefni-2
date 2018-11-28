@@ -1,10 +1,11 @@
 import List from './lib/list.js'; /* eslint-disable-line*/
-import { fillList } from './lib/fill.js'; /* eslint-disable-line*/
 
 // Breytur sem halda utan um stöðu sía, true þýðir að sýna eigi breyturnar
 let filterHTML = true;
 let filterCSS = true;
 let filterJS = true;
+
+let currentLecture;
 
 // Náð í JSON fyrir fyrirlestra og það parse-að
 function loadJSON(callback) {
@@ -24,7 +25,8 @@ let lectureData;
 loadJSON((response) => {
   const jsonResponse = JSON.parse(response);
   lectureData = jsonResponse;
-  fillList(lectureData, filterHTML, filterCSS, filterJS);
+  const list = new List(lectureData);
+  list.load(filterHTML, filterCSS, filterJS);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,31 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const isLecturePage = page.classList.contains('lecture-page');
 
   if (isLecturePage) {
-
+    const header = page.querySelector('.header');
+    header.style.backgroundImage();
   } else {
-    const list = new List();
-    list.load();
+    const header = page.querySelector('.header');
+    header.style.backgroundImage = 'img/header.jpg';
   }
 });
 
 // Event listeners fyrir síurnar þrjár
 document.querySelector('.filter-html').addEventListener('click', () => {
   filterHTML = !filterHTML;
-  const list = new List();
-  list.load();
-  fillList(lectureData, filterHTML, filterCSS, filterJS);
+  const list = new List(lectureData);
+  list.load(filterHTML, filterCSS, filterJS);
 });
 
 document.querySelector('.filter-css').addEventListener('click', () => {
   filterCSS = !filterCSS;
-  const list = new List();
-  list.load();
-  fillList(lectureData, filterHTML, filterCSS, filterJS);
+  const list = new List(lectureData);
+  list.load(filterHTML, filterCSS, filterJS);
 });
 
 document.querySelector('.filter-js').addEventListener('click', () => {
   filterJS = !filterJS;
-  const list = new List();
-  list.load();
-  fillList(lectureData, filterHTML, filterCSS, filterJS);
+  const list = new List(lectureData);
+  list.load(filterHTML, filterCSS, filterJS);
 });

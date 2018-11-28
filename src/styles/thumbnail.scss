@@ -5,23 +5,34 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  height: 386.67px;
-  width: 386.67px;
   margin-bottom: $gutter*2;
+
+  @include columns(4);
+
+  @media (max-width: 1000px) {
+    @include columns(6);
+  }
+
+  @media (max-width: 500px) {
+    @include columns(11);
+  }
 
   &__subtitle {
     font-family: $font-heading;
-    font-size: 0.75rem;
-    background-color: $color-4;
+    font-size: 1rem;
     text-transform: uppercase;
+    margin-left: $gutter/2;
+    margin-top: $gutter/2;
   }
   
   &__title {
     font-family: $font-heading;
-    font-size: 1.25rem;
-    background-color: $color-4;
+    font-size: 1.5rem;
     font-weight: 600;
     word-wrap: wrap;
+    margin-left: $gutter/2;
+    margin-top: $gutter/2;
+    margin-bottom: $gutter/2;
   }
 
   &__image {
