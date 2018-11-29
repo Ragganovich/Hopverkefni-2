@@ -1,5 +1,46 @@
 # Hópverkefni 2
 
+# Upplýsingar um keyrslu
+
+Til að keyra verkefnið þarf að setja upp npm svo með eftirfarandi skipun í rótarmöppu verkefnisins:
+
+npm install
+
+Því næst að keyra það með næstu skipun:
+
+npm run dev
+
+Til að keyra á það ESlint og Stylelint er svo eftirfarandi skipun notuð:
+
+npm test -s
+
+# Uppsetning verkefnis
+
+Verkefnið er sett upp með lintrc skrár, git-tengdar skrár, package.json, fyrirlestrarupplýsingar í lectures.json, og html síðurnar tvær í rótarmöppu (ásamt readme). Einnig er grid.css til staðar sem notað var við uppsetningu útlits.
+
+Mappan img í rótarmöppu inniheldur myndir sem notaðar eru á síðunni.
+
+Í src möppunni er svo index.js, sem er aðal-skriptan á síðunni. Tvær möppur eru svo í src möppunni, annars vegar lib. Þar má finna helpers.js, sem inniheldur eitt hjálparfall, og list.js, sem inniheldur klasa sem notaður er til að setja upp forsíðu.
+
+Javascript eru merkt sem module í html skrám, og import url merkt með .js því að ekki tókst að import-a án þess. Virknin breytist ekkert.
+
+Index.js er aðal skráin, eins og fram kemur. Hún setur upp fyrirlestrarsíður eftir data úr JSON, en "klasinn" úr list.js sér um að setja upp lista af fyrirlestrum á forsíðunni. Þegar svo er smellt á eitthvað thumbnail á forsíðu er sá fyrirlestur sérstaklega geymdur til að ekki þurfi að ná úr gögn í JSON aftur, og þá skipt um síðu og index.js setur þá upp fyrirlestrar síðuna. Þetta, og fleira, ætti að koma fram í kommentum í js skránum.
+
+Í hinni möppunni í src, styles, eru svo allar scss skrár sem notaðar eru fyrir útlit síðunnar.
+Skrárnar eru config.scss, sem í eru geymd nokkur föll og breytur, styles.scss, sem inniheldur nokkrar grunn css-segðir, og import fyrir allar notaðar skrár. Restin af skránum eru svo fyrir viðeigandi klasa, og innihalda hluti fyrir undirklasa eftir því sem er viðeigandi.
+
+Almennt er það ein skrá á hverja tegund af hlut, svo sem thumbnail skráin, sem heldur utan um virkni hvers thumbnails sem birtist á forsíðunni, og texta og myndar sem tilheyra því. Thumbnail containerinn (div) er þá valið með klasanafni, og texti/myndir með undirklasanafni, "__image" eða svipað.
+
+# Þeir (sá) sem unnu (vann) verkefnið
+
+Ragnar Pálsson, rap12@hi.is vann þetta verkefni einn, þar sem ekki tókst að halda uppi samskiptum (mér var ekki svarað) eftir að hópur var stofnaður með hjálp "vantar hóp" síðu á slack.
+
+Það kom því aðeins niður á fjölda git push-a, þar sem þetta var allt unnið á sömu tölvunni.
+
+
+
+# Lýsing frá kennara byrjar hér
+
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
 Gefnar eru [fyrirmyndir](utlit/) í `500px` og `1500px` án grindar ásamt `1500px` með grind. Allt efni skal skalast snyrtilega á milli.
