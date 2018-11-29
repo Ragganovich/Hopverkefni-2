@@ -1,0 +1,14 @@
+@import "config";
+
+.heading {
+  margin: 0 auto;
+  margin-bottom: $gutter;
+  @include columns(11);
+
+  @media (min-width: 500px) {
+    @include columns(8);
+  }
+
+  font-family: $font-heading;
+  font-size: 2rem;
+}

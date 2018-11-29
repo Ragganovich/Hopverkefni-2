@@ -1,0 +1,15 @@
+@import "config";
+
+.figure {
+  margin: 0 auto;
+  margin-bottom: $gutter*2;
+  @include columns(11);
+
+  @media (min-width: 500px) {
+    @include columns(8);
+  }
+
+  &__caption {
+    font-style: italic;
+  }
+}

@@ -8,7 +8,7 @@ export default class List {
 
   load(filterHTML, filterCSS, filterJS) {
     empty(this.container);
-    this.fillList(filterHTML, filterCSS, filterJS)
+    this.fillList(filterHTML, filterCSS, filterJS);
   }
 
   fill(type) {
@@ -23,9 +23,8 @@ export default class List {
         // setja thumbnail fyrirlestursins sem bakgrunnsmynd
         const thumbImg = this.lectures[i].thumbnail;
         if (thumbImg) {
-          const imgUrl = `${thumbImg}`;
           const image = document.createElement('IMG');
-          image.src = imgUrl;
+          image.src = thumbImg;
           image.className = 'thumbnail__image';
           node.appendChild(image);
         }
@@ -41,6 +40,17 @@ export default class List {
         title.className = 'thumbnail__title';
         const titleText = document.createTextNode(this.lectures[i].title);
         title.appendChild(titleText);
+
+        // Gáð hvort um kláraðan fyrirlestur sé að ræða
+        if (localStorage.getItem('finished')) {
+          const finished = JSON.parse(localStorage.getItem('finished'));
+          if (finished[node.id]) {
+            const check = document.createElement('SPAN');
+            const checkText = document.createTextNode('\u2713');
+            check.appendChild(checkText);
+            title.appendChild(check);
+          }
+        }
 
         // bæta titlum inn
         node.appendChild(subtitle);
@@ -69,9 +79,12 @@ export default class List {
   }
 
   // Setja upp event listeners fyrir thumbnails fyrir fyrirlestra
-  initEventListeners() {
-    this.container.children().addEventListener('click', () => {
-
-    });
+  initEventListeners(myListener) {
+    const { children } = this.container;
+    for (let i = 0; i < children.length; i += 1) {
+      if (children[i].id) {
+        children[i].addEventListener('click', myListener, false);
+      }
+    }
   }
 }

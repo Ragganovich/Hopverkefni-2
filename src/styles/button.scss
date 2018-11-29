@@ -1,17 +1,18 @@
+@import "config";
+
 button {
-  display: inline-block;
-  
   font-family: $font-heading;
 
   color: $color-1;
   font-size: 1.5em;
-  font-weight:700;
+  font-weight: 700;
   text-align: center;
 
   background-color: $color-4;
   border: none;
   padding: $gutter/2 $gutter;
-  margin: $gutter;
+  margin-left: $gutter;
+  margin-right: $gutter;
   margin-bottom: $gutter*2;
 
   border-radius: 0.5em;

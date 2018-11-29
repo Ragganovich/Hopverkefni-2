@@ -1,4 +1,18 @@
+@import "config";
+
 .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  @include row();
+
+  @media (min-width: 1000) {
+    justify-content: left;
+  }
+
+  @media (min-width: 500px) {
+    justify-content: left;
+  }
+
 }

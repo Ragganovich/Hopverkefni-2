@@ -1,0 +1,9 @@
+@import "config";
+
+.lecture__content {
+  display: flex;
+  justify-content: left;
+
+  @include row();
+  flex-direction: column;
+}

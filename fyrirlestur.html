@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="is">
-<head>
-  <meta charset="utf-8">
-  <title>Fyrirlestur</title>
-</head>
-<body class="lecture-page">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fyrirlestur</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i|Roboto+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles.css">
+    <script type="module" src="src/index.js"></script>
+    <script type="module" src="src/lib/list.js"></script>
+    <script type="module" src="src/lib/helpers.js"></script>
+  </head>
+  <body class="lecture-page">
+    <header class="header">
+      <div class="header__layer">
+        <div class="header__content">
+          <h2 class="header__subtitle"></h2>
+          <h1 class="header__title"></h1>
+        </div>
+      </div>
+    </header>
 
-</body>
+    <main class="main">
+      <section class="section">
+        <div class="lecture__content">
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="footer">
+          <button class="footer__finish">Klára fyrirlestur</button>
+          <a class="footer__link" href="index.html">Til baka</a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

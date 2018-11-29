@@ -1,3 +1,5 @@
+@import "config";
+
 .thumbnail {
   background-color: $color-4;
   background-clip: content-box;
@@ -7,19 +9,28 @@
   flex-direction: column;
   margin-bottom: $gutter*2;
 
-  @include columns(4);
+  transition: 
+    color $transition,
+    background-color $transition;
 
-  @media (max-width: 1000px) {
+  &:hover {
+    color: $color-4;
+    background-color: $color-1;
+  }
+
+  @include columns(11);
+
+  @media (min-width: 500px) {
     @include columns(6);
   }
 
-  @media (max-width: 500px) {
-    @include columns(11);
+  @media (min-width: 1000px) {
+    @include columns(4);
   }
 
   &__subtitle {
     font-family: $font-heading;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     margin-left: $gutter/2;
     margin-top: $gutter/2;
@@ -27,11 +38,10 @@
   
   &__title {
     font-family: $font-heading;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     word-wrap: wrap;
     margin-left: $gutter/2;
-    margin-top: $gutter/2;
     margin-bottom: $gutter/2;
   }
 

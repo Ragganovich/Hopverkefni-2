@@ -1,5 +1,9 @@
+@import "config";
+
 .header {
   margin-bottom: $gutter * 2;
+  background-size: cover;
+  background-color: $color-4;
 
   &__content {
     display:flex;
@@ -11,13 +15,17 @@
   &__subtitle {
     font-family: $font-heading;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    margin-top: $gutter*4;
+    text-transform: uppercase;
   }
   
   &__title {
     font-family: $font-heading;
     text-align: center;
     font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: $gutter*4;
   }
 
   &__layer {

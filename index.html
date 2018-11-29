@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hópverkefni 2</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" href="grid.css">
     <link rel="stylesheet" href="dist/styles.css">
     <script type="module" src="src/index.js"></script>
     <script type="module" src="src/lib/list.js"></script>
     <script type="module" src="src/lib/helpers.js"></script>
-    <script type="module" src="src/lib/fill.js"></script>
   </head>
-  <body>
+  <body class="front-page">
     <header class="header">
       <div class="header__layer">
         <div class="header__content">
@@ -25,9 +24,9 @@
     <main class="main">
       <section class="section">
         <div class="filter">
-          <button class="filter-html">HTML</button>
-          <button class="filter-css">CSS</button>
-          <button class="filter-js">JavaScript</button>
+          <button class="filter__button" id='filter-html'>HTML</button>
+          <button class="filter__button" id='filter-css'>CSS</button>
+          <button class="filter__button" id='filter-js'>JavaScript</button>
         </div>
       </section>
 

@@ -1,0 +1,22 @@
+@import "config";
+
+.quote {
+  margin: $gutter*2 auto;
+  @include columns(11);
+
+  @media (min-width: 500px) {
+    @include columns(8);
+  }
+
+  background-color: $color-4;
+
+  &__text {
+    margin-bottom: $gutter;
+    margin-top: $gutter;
+  }
+  
+  &__cite {
+    display: flex;
+    margin-bottom: $gutter;
+  }
+}
