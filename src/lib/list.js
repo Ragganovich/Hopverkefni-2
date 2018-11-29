@@ -42,9 +42,9 @@ export default class List {
         title.appendChild(titleText);
 
         // Gáð hvort um kláraðan fyrirlestur sé að ræða
-        if (localStorage.getItem('finished')) {
-          const finished = JSON.parse(localStorage.getItem('finished'));
-          if (finished[node.id]) {
+        if (localStorage.getItem(node.id)) {
+          const finished = JSON.parse(localStorage.getItem(node.id));
+          if (finished) {
             const check = document.createElement('SPAN');
             check.className = 'span';
             const checkText = document.createTextNode('\u2713');

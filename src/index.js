@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     header.querySelector('.header__title').appendChild(title);
 
     // Ef fyrirlestur er kláraður, breyta útliti á takka í footer
-    let finished = localStorage.getItem('finished');
+    let finished = localStorage.getItem(lectureData.slug);
     if (finished) {
       finished = JSON.parse(finished);
-      if (finished[lectureData.slug]) {
+      if (finished) {
         const footButton = document.querySelector('.footer__finish');
         footButton.textContent = '';
         const span = document.createElement('SPAN');
@@ -209,17 +209,21 @@ if (document.querySelector('#filter-js')) {
 if (document.querySelector('.lecture-page')) {
   document.querySelector('.footer__finish').addEventListener('click', () => {
     // Gáð hvort upplýsingar um kláraða fyrirlestra séu til í storage
-    if (localStorage.getItem('finished')) {
+    const { slug } = lectureData;
+    if (localStorage.getItem(slug)) {
       // Ef svo er eru upplýsingar uppfærðar og geymdar aftur
-      const finished = JSON.parse(localStorage.getItem('finished'));
-      if (finished[lectureData.slug]) {
-        finished[lectureData.slug] = false;
+      let finished = JSON.parse(localStorage.getItem(slug));
+      if (finished) {
+        finished = false;
+        localStorage.setItem(slug, JSON.stringify(finished));
         // Breyta takka til að sýna að fyrirlestur er ekki búinn
         const footButton = document.querySelector('.footer__finish');
         empty(footButton);
         footButton.textContent = 'Klára fyrirlestur';
       } else {
-        finished[lectureData.slug] = true;
+        finished = true;
+        console.log(JSON.stringify(finished));
+        localStorage.setItem(slug, JSON.stringify(finished));
         // Breyta takka til að sýna að fyrirlestur er búinn
         const footButton = document.querySelector('.footer__finish');
         footButton.textContent = '';
@@ -229,16 +233,15 @@ if (document.querySelector('.lecture-page')) {
         span.appendChild(finishedText);
         footButton.appendChild(span);
       }
-      localStorage.setItem('finished', JSON.stringify(finished));
     } else {
       // Ef ekki þá eru hlutur undir upplýsingarnar búnar til og hann geymdur á formi strengs
-      const finished = {};
-      finished[lectureData.slug] = true;
-      localStorage.setItem('finished', JSON.stringify(finished));
+      const finished = true;
+      localStorage.setItem(slug, JSON.stringify(finished));
       // Breyta takka til að sýna að fyrirlestur er búinn
       const footButton = document.querySelector('.footer__finish');
       footButton.textContent = '';
       const span = document.createElement('SPAN');
+      span.className = 'span';
       const finishedText = document.createTextNode('\u2713 Kláraður fyrirlestur');
       span.appendChild(finishedText);
       footButton.appendChild(span);
