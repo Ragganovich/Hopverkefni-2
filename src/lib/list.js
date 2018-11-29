@@ -46,7 +46,7 @@ export default class List {
           const finished = JSON.parse(localStorage.getItem('finished'));
           if (finished[node.id]) {
             const check = document.createElement('SPAN');
-            check.className('span');
+            check.className = 'span';
             const checkText = document.createTextNode('\u2713');
             check.appendChild(checkText);
             title.appendChild(check);
