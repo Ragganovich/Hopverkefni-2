@@ -11,10 +11,10 @@
   background-color: $color-4;
 
   &__text {
-    margin-bottom: $gutter;
     margin-top: $gutter;
+    margin-bottom: $gutter;
   }
-  
+
   &__cite {
     display: flex;
     margin-bottom: $gutter;

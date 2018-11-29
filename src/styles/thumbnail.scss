@@ -1,15 +1,16 @@
 @import "config";
 
 .thumbnail {
+  display: flex;
+  margin-bottom: $gutter*2;
+  flex-direction: column;
+
   background-color: $color-4;
   background-clip: content-box;
 
-  display: flex;
   justify-content: flex-end;
-  flex-direction: column;
-  margin-bottom: $gutter*2;
 
-  transition: 
+  transition:
     color $transition,
     background-color $transition;
 
@@ -29,20 +30,20 @@
   }
 
   &__subtitle {
+    margin-top: $gutter/2;
+    margin-left: $gutter/2;
     font-family: $font-heading;
     font-size: 1.5rem;
     text-transform: uppercase;
-    margin-left: $gutter/2;
-    margin-top: $gutter/2;
   }
-  
+
   &__title {
+    margin-bottom: $gutter/2;
+    margin-left: $gutter/2;
     font-family: $font-heading;
     font-size: 2rem;
     font-weight: 700;
     word-wrap: wrap;
-    margin-left: $gutter/2;
-    margin-bottom: $gutter/2;
   }
 
   &__image {

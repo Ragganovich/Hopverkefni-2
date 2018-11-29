@@ -5,26 +5,25 @@
   justify-content: center;
 
   &__button {
-    font-family: $font-heading;
-  
-    color: $color-1;
-    font-size: 1.5em;
-    font-weight: 700;
-    text-align: center;
-  
-    background-color: $color-4;
-    border: none;
     padding: $gutter/2 $gutter;
-    margin-left: $gutter;
     margin-right: $gutter;
     margin-bottom: $gutter*2;
-  
+    margin-left: $gutter;
+
+    font-family: $font-heading;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: $color-1;
+    text-align: center;
+
+    background-color: $color-4;
+    border: 0;
     border-radius: 0.5em;
-  
-    transition: 
+
+    transition:
       color $transition,
       background-color $transition;
-  
+
     &:hover {
       color: $color-4;
       background-color: $color-1;

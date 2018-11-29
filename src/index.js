@@ -224,6 +224,7 @@ if (document.querySelector('.lecture-page')) {
         const footButton = document.querySelector('.footer__finish');
         footButton.textContent = '';
         const span = document.createElement('SPAN');
+        span.className = 'span';
         const finishedText = document.createTextNode('\u2713 Kláraður fyrirlestur');
         span.appendChild(finishedText);
         footButton.appendChild(span);
